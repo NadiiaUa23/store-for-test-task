@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "3128cb36e71653461ddb57fdb8f097fa"
+name = "store for test task"
+handle = "store-for-test-task"
+application_url = "https://request-beat-stakeholders-diversity.trycloudflare.com"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-04"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = ""
+
+[auth]
+redirect_urls = ["https://request-beat-stakeholders-diversity.trycloudflare.com/auth/callback", "https://request-beat-stakeholders-diversity.trycloudflare.com/auth/shopify/callback", "https://request-beat-stakeholders-diversity.trycloudflare.com/api/auth/callback"]
+
+[pos]
+embedded = false
